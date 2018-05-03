@@ -4,6 +4,14 @@ import matplotlib.pyplot as plt
 import time
 
 
+""" This python script generates a sequence of plots illustrating how the k-means 
+clustering algorithm works. It also saves these plots in separate image files.
+
+Author: http://wesamelshamy.com
+https://github.com/welshamy/k-means-illustrator
+"""
+
+
 def main():
     n_clusters = 3       # Number of clusters
     n_points = 20        # Number of points
