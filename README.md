@@ -14,10 +14,10 @@ python kmeans.py
 The script has a few hard coded parameters with default values:
 
 ```
-    n_clusters = 3       # Number of clusters
-    n_points = 20        # Number of points
-    iterations = 10      # Number of iterations
-    dimensions = (5, 5)  # Dimension of the figure
+n_clusters = 3       # Number of clusters
+n_points = 20        # Number of points
+iterations = 10      # Number of iterations
+dimensions = (5, 5)  # Dimension of the figure
 ```
 
 ![](knn_20_points_3_clusters_0_iterations.png)

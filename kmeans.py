@@ -14,7 +14,7 @@ https://github.com/welshamy/k-means-illustrator
 
 def main():
     n_clusters = 3       # Number of clusters
-    n_points = 20        # Number of points
+    n_points = 100        # Number of points
     iterations = 10      # Number of iterations
     dimensions = (5, 5)  # Dimension of the figure
 
@@ -57,7 +57,7 @@ def main():
         new_centers = points.groupby(by='cluster').mean()
         centers[['x', 'y']] = new_centers[['x', 'y']]
 
-        plt.savefig('knn_{}_points_{}_clusters_{}_iterations.png'.format(n_points, n_clusters, i))
+        plt.savefig('kmeans_{}_points_{}_clusters_{}_iterations.png'.format(n_points, n_clusters, i))
         plt.draw()
         plt.pause(0.001)
         time.sleep(2)
