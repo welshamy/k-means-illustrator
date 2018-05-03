@@ -1,5 +1,5 @@
 # K-means Illustrator
-This python 3 script generates a sequence of plots illustrating how the [k-means] clustering algorithm works.
+This python script generates a sequence of plots illustrating how the [k-means] clustering algorithm works.
 It also saves these plots in separate image files. 
 
 I needed the images for an introductory presentation on machine learning, so I created this script and open sourced it.
