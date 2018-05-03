@@ -5,6 +5,12 @@ It also saves these plots in separate image files.
 I needed the images for an introductory presentation on machine learning, so I created this script and open sourced it.
 Feel free to use it the way you want.  I would appreciate citation or attribution, though.
 
+Run the script with:
+
+```
+python kmeans.py
+```
+
 The script has a few hard coded parameters with default values:
 
 ```
