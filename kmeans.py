@@ -18,7 +18,7 @@ def main():
     iterations = 10      # Number of iterations
     dimensions = (5, 5)  # Dimension of the figure
 
-    colors = ['red', 'green', 'blue', 'orange', 'turquoise', 'yellow', 'pink', 'purple']
+    colors = pd.Series(['red', 'green', 'blue', 'orange', 'turquoise', 'yellow', 'pink', 'purple'])
 
     pad = dimensions[0]/10.
     scale = dimensions[0]/6.
@@ -26,13 +26,12 @@ def main():
     points = pd.DataFrame({
         'x': np.random.rand(n_points) * scale * dimensions[0] + pad,
         'y': np.random.rand(n_points) * scale * dimensions[1] + pad,
-        'cluster': np.zeros(n_points)
+        'cluster': np.full(n_points, 7)
     })
 
     centers = pd.DataFrame({
         'x': np.random.rand(n_clusters) * scale * dimensions[0] + pad,
-        'y': np.random.rand(n_clusters) * scale * dimensions[1] + pad,
-        'color': colors[:3]
+        'y': np.random.rand(n_clusters) * scale * dimensions[1] + pad
     })
 
     def find_nearest_cluster(p):
@@ -45,15 +44,13 @@ def main():
     plt.show()
 
     for i in range(iterations):
-        points['cluster'] = points.apply(find_nearest_cluster, axis=1)
-
         plt.subplot(aspect='equal')
-        plt.scatter(points.x, points.y, s=100, c=centers.iloc[points.cluster].color, alpha=0.5)
-        plt.scatter(centers.x, centers.y, s=50, c=centers.color, alpha=0.5, marker='+')
+        plt.scatter(points.x, points.y, s=100, c=colors[points.cluster], alpha=0.5)
+        plt.scatter(centers.x, centers.y, s=300, c=colors, alpha=1, marker='+')
         plt.text(dimensions[0] * 0.1, dimensions[1] * 0.9, 'Iteration {}'.format(i), fontsize=14)
-
         plt.axis([0, dimensions[0], 0, dimensions[1]])
 
+        points['cluster'] = points.apply(find_nearest_cluster, axis=1)
         new_centers = points.groupby(by='cluster').mean()
         centers[['x', 'y']] = new_centers[['x', 'y']]
 
