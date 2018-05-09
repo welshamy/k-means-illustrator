@@ -20,11 +20,11 @@ iterations = 10      # Number of iterations
 dimensions = (5, 5)  # Dimension of the figure
 ```
 
-![](knn_100_points_3_clusters_0_iterations.png)
+![](kmeans_100_points_3_clusters_0_iterations.png)
 
-![](knn_100_points_3_clusters_1_iterations.png)
+![](kmeans_100_points_3_clusters_1_iterations.png)
 
-![](knn_100_points_3_clusters_9_iterations.png)
+![](kmeans_100_points_3_clusters_9_iterations.png)
 
 This code is released under [the MIT Licence][mit].
 
